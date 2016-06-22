@@ -1,0 +1,58 @@
+<title>Record</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+
+
+<div class="content">
+  Test
+</div>
+
+<script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+<script src="https://cdn.webrtc-experiment.com/screenshot.js"></script>
+<script src="https://cdn.webrtc-experiment.com/RecordRTC/Whammy.js"></script>
+<script src="https://cdn.webrtc-experiment.com/RecordRTC/CanvasRecorder.js"></script>
+<script src="https://cdn.webrtc-experiment.com/RecordRTC/MediaStreamRecorder.js"></script>
+<script src="https://cdn.WebRTC-Experiment.com/gumadapter.js"></script>
+
+
+<script>
+// Where is your socket server?
+var socket = io.connect('http://localhost:3000');
+
+var recorder = RecordRTC(document.documentElement, {
+    type: 'canvas',
+    disableLogs: true,
+    bufferSize: 16384,
+    videoBitsPerSecond: 128000,
+    showMousePointer: false,
+    frameInterval: 9, // 30 milliseconds
+});
+
+/**
+ Start recording.
+*/
+recorder.startRecording();
+
+socket.on('duration', function(msg){
+
+  console.log(msg);
+
+  setTimeout(function(){
+    recorder.stopRecording(function(url) {
+        console.log('Socket baby! Ç²');
+        // recorder.save();
+        recorder.getDataURL(function(dataURL) {
+         socket.emit('video', dataURL);
+         socket.emit('done', 'true');
+        });
+    });
+
+  },msg * 1000);
+ });
+
+</script>
