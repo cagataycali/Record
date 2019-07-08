@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node index.js"
+    "start": "nodemon --exec babel-node index.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "Cagatay CALI",
   "license": "ISC",
@@ -38,6 +40,8 @@
     "socket.io": "1.2.0",
     "streaming-s3": "^0.4.1",
     "webdriverio": "^4.0.9",
-    "yosay": "^1.1.1"
-  }
+    "yosay": "^1.1.1",
+    "snyk": "^1.192.3"
+  },
+  "snyk": true
 }
