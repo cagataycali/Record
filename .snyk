@@ -1,0 +1,26 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-450202:
+    - streaming-s3 > async > lodash:
+        patched: '2019-07-08T05:42:33.659Z'
+    - webdriverio > archiver > lodash:
+        patched: '2019-07-08T05:42:33.659Z'
+    - webdriverio > inquirer > lodash:
+        patched: '2019-07-08T05:42:33.659Z'
+    - streaming-s3 > aws-sdk > xmlbuilder > lodash:
+        patched: '2019-07-08T05:42:33.659Z'
+    - webdriverio > archiver > archiver-utils > lodash:
+        patched: '2019-07-08T05:42:33.659Z'
+    - webdriverio > archiver > async > lodash:
+        patched: '2019-07-08T05:42:33.659Z'
+    - webdriverio > archiver > zip-stream > lodash:
+        patched: '2019-07-08T05:42:33.659Z'
+    - webdriverio > gaze > globule > lodash:
+        patched: '2019-07-08T05:42:33.659Z'
+    - streaming-s3 > aws-sdk > xml2js > xmlbuilder > lodash:
+        patched: '2019-07-08T05:42:33.659Z'
+    - webdriverio > archiver > zip-stream > archiver-utils > lodash:
+        patched: '2019-07-08T05:42:33.659Z'
