@@ -37,7 +37,7 @@
     "selenium-webdriver": "^2.53.2",
     "socket.io": "1.2.0",
     "streaming-s3": "^0.4.1",
-    "webdriverio": "^4.0.9",
+    "webdriverio": "^5.0.0",
     "yosay": "^1.1.1"
   }
 }
