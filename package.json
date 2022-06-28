@@ -31,7 +31,7 @@
     "exec": "^0.2.1",
     "express": "4.10.2",
     "intimidate": "^1.2.0",
-    "nodemon": "^1.9.2",
+    "nodemon": "^2.0.17",
     "request": "^2.72.0",
     "s3": "^4.4.0",
     "selenium-webdriver": "^2.53.2",
