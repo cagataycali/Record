@@ -38,6 +38,6 @@
     "socket.io": "1.2.0",
     "streaming-s3": "^0.4.1",
     "webdriverio": "^4.0.9",
-    "yosay": "^1.1.1"
+    "yosay": "^2.0.0"
   }
 }
